@@ -1,3 +1,4 @@
-.github
+*.log
+*.cache
 
-firebase-debug.log
+.github
