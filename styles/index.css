@@ -1,0 +1,248 @@
+.container {
+  max-width: 990px;
+  margin: 0 auto;
+  padding-top: 70px;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+h1 {
+ font-size: 2rem;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 3rem;
+
+  background: var(--navbar);
+
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+
+  z-index: 10;
+}
+nav > a {
+  font-weight: 700;
+
+  padding: 0.75rem;
+  background: var(--navbar);
+  transition: filter 0.3s;
+}
+nav > a:hover {
+  filter: brightness(0.9);
+}
+
+.logo-container {
+  margin-top: 40px;
+}
+#logo {
+  width: 18.75rem;
+}
+
+#separator {
+  height: 1px;
+  width: 150px;
+  border: 1px solid lightgray;
+
+  margin: 0 auto;
+}
+section {
+  padding: 3.5rem 2rem;
+}
+section.infos main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  
+  margin: 1.5rem 0;
+}
+section.infos main > h2 {
+  margin-bottom: 0.5rem;
+}
+section.infos main > a {
+  display: flex;
+  justify-content: space-between;
+  width: 10.3rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+section.infos main > a > i {
+  font-size: 1.5rem;
+}
+section.infos main > a > i.fa-whatsapp {
+  color: var(--green);
+}
+section.infos footer {
+  display: flex;
+  justify-content: center;
+}
+section.infos footer > div {
+  padding: 0.5rem;
+
+  border: 3px solid var(--footer-border);
+  border-radius: 5px;
+
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+iframe#mapa {
+  width: 35rem;
+  height: 28rem;
+
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+footer#footer {
+  min-height: 10rem;
+  background-color: #746C70;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 2.5rem;
+}
+footer#footer > div {
+  flex: 1;
+  max-width: 990px;
+  width: 100%;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0 auto;
+}
+footer#footer img#logo {
+  width: 8rem;
+}
+footer#footer p {
+  color: var(--white);
+}
+footer#footer a {
+  transition: filter 0.3s;
+  margin: 0 0.25rem;
+}
+footer#footer a img {
+  width: 2rem;
+}
+footer#footer a:hover {
+  filter: brightness(0.8);
+}
+
+
+img.slider-img {
+  width: 28rem;
+  height: 28rem;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.slider-radio {
+  display: none;
+}
+.slider-holder {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.slider-item {
+  position: absolute;
+  display: block;
+
+  opacity: 1;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+.bullets {
+  margin-top: 30.93rem;
+}
+.bullets-item {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.bullets-item:hover {
+  background: var(--white);
+}
+#slide-1:checked ~ .bullets .bullets-item--1 {
+  background: var(--white);
+}
+#slide-2:checked ~ .bullets .bullets-item--2 {
+  background: var(--white);
+}
+
+#slide-1:checked ~ .slider-holder .slider-item--1 {
+  z-index: 2;
+  transform: scale(1);
+}
+#slide-2:checked ~ .slider-holder .slider-item--2 {
+  z-index: 2;
+  transform: scale(1);
+}
+#slide-1:checked ~ .slider-holder .slider-item--2 {
+  z-index: 1;
+  transform: scale(0.85) translateX(5rem);
+}
+#slide-2:checked ~ .slider-holder .slider-item--1 {
+  z-index: 1;
+  transform: scale(0.85) translateX(-5rem);
+}
+
+@media(max-width: 720px) {
+  iframe#mapa {
+    width: 24rem;
+    height: 22rem;
+  }
+
+  img.slider-img {
+    width: 24rem;
+    height: 24rem;
+  }
+
+  .bullets {
+    margin-top: 26rem;
+  }
+}
+@media(max-width: 420px) {
+  nav > a {
+    padding: 0.5rem;
+  }
+
+  iframe#mapa {
+    width: 18rem;
+    height: 18rem;
+  }
+
+  img.slider-img {
+    width: 20rem;
+    height: 20rem;
+  }
+  #slide-1:checked ~ .slider-holder .slider-item--2 {
+    z-index: 1;
+    transform: scale(0.85) translateX(3.2rem);
+  }
+  #slide-2:checked ~ .slider-holder .slider-item--1 {
+    z-index: 1;
+    transform: scale(0.85) translateX(-3.2rem);
+  }
+
+  .bullets {
+    margin-top: 22rem;
+  }
+}
